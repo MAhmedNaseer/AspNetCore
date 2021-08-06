@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@using CodeFirstDemo.Data
+@{
+    ViewData["Title"] = "Home page";
+    List<Student> students = (List<Student>)ViewData["Students"];
+}
+<style>
+    tr td{
+        padding: 20px;
+        border: 1px solid black;
+    }
+    </style>
+<tr class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Reference Id</td>
+        </tr>
+        @foreach (var student in students)
+        {
+
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Email</td>
+                <td>@student.ReferenceId</td>
+            </tr>
+        }
+    </table>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
